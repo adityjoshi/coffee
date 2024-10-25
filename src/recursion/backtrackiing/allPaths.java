@@ -26,6 +26,7 @@ public class allPaths {
         }
         if (r>0) {
             path(r-1,c,maze,p+"U");
+
         }
         if (c>0) {
             path(r,c-1,maze,"L");
