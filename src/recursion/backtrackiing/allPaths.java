@@ -4,7 +4,7 @@ public class allPaths {
     public static void main(String[] args) {
         boolean [] [] mat = {
                 {true,true,true},
-                {true,true,true},
+                {true,false,true},
                 {true,true,true},
         };
         path(0,0,mat,"");
