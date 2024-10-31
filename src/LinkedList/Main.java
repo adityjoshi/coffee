@@ -13,7 +13,7 @@ public class Main {
         // insert at last
         list.insertLast(99);
 
-        System.out.println(list.deleteFirst());
+        System.out.println(list.deleteLast());
         list.display();
     }
 }
