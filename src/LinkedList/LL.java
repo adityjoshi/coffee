@@ -31,6 +31,25 @@ public class LL {
         size++;
     }
 
+    public void insertCustom(int val, int index) {
+
+        if (index == 0) {
+            insertElement(val);
+            return;
+        }
+        if (index == size) {
+            insertLast(val);
+            return;
+        }
+        Node temp = head;
+        for (int i = 1 ; i<index;i++) {
+            temp = temp.next;
+        }
+        Node node = new Node(val,temp.next);
+        temp.next = node;
+        size++;
+    }
+
     public void display() {
         Node temp = head ;
         while (temp != null) {

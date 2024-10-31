@@ -8,7 +8,10 @@ public class Main {
         list.insertElement(8);
         list.insertElement(6);
         list.insertElement(4);
-
+        // custom insert
+        list.insertCustom(100,3);
+        // insert at last
+        list.insertLast(99);
         list.display();
     }
 }
