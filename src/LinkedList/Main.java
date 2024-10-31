@@ -12,6 +12,8 @@ public class Main {
         list.insertCustom(100,3);
         // insert at last
         list.insertLast(99);
+
+        System.out.println(list.deleteFirst());
         list.display();
     }
 }
