@@ -29,6 +29,22 @@ public class dll {
         last.next = node ;
         node.prev = last ;
     }
+
+    public void insertCustom(int afterVal, int val) {
+         Node p = findValue(afterVal);
+
+    }
+
+    public Node findValue(int afterVal) {
+        Node node = head;
+        while (node != null) {
+            if (node.val == afterVal) {
+                return node;
+            }
+            node = node.next;
+        }
+        return null;
+    }
     public void display() {
         Node node = head;
          Node last = null ;
