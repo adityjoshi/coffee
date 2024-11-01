@@ -9,19 +9,28 @@ public class dll {
         node.next = head;
         node.prev = null;
         if (head != null) {
-            head.prev = head;
+            head.prev = node;
         }
         head = node;
 
     }
     public void display() {
         Node node = head;
+         Node last = null ;
         while (node != null) {
             System.out.print(node.val + "->");
+            last = node ;
             node = node.next;
         }
         System.out.println("End");
+
+        while (last != null) {
+            System.out.print(last.val + " -> ");
+            last = last.prev;
+        }
+        System.out.println("start");
     }
+
     private class Node {
         int val;
         Node next;
