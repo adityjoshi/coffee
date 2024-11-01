@@ -8,6 +8,7 @@ public class doublyLL {
         list.insertFirst(5);
         list.insertFirst(8);
         list.insertFirst(6);
+        list.insertLast(99);
 
         list.display();
     }
