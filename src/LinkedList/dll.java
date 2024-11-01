@@ -2,7 +2,7 @@ package LinkedList;
 
 public class dll {
 
-    Node head;
+    private Node head;
 
     public void insertFirst(int val) {
         Node node = new Node(val);
@@ -20,7 +20,7 @@ public class dll {
             System.out.print(node.val + "->");
             node = node.next;
         }
-        System.out.println();
+        System.out.println("End");
     }
     private class Node {
         int val;
