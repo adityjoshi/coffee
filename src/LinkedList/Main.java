@@ -18,5 +18,6 @@ public class Main {
         System.out.println(list.deleteIndex(2));
         list.display();
 
+
     }
 }
