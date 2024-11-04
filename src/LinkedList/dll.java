@@ -4,6 +4,7 @@ public class dll {
 
     private Node head;
 
+    // insert at first of the linked list
     public void insertFirst(int val) {
         Node node = new Node(val);
         node.next = head;
@@ -14,6 +15,7 @@ public class dll {
         head = node;
 
     }
+    // insert at the last of the linked list
     public void insertLast(int val) {
         Node node = new Node(val);
         Node last = head ;
@@ -30,6 +32,7 @@ public class dll {
         node.prev = last ;
     }
 
+    // insert at custom position
     public void insertCustom(int afterVal, int val) {
          Node p = findValue(afterVal);
 
