@@ -19,12 +19,15 @@ public class dll {
     public void insertLast(int val) {
         Node node = new Node(val);
         Node last = head ;
+        // next value of last node will be null
         node.next = null ;
+        // check if the head is null or not
         if (head == null) {
             node.prev = null;
             head = node ;
             return ;
         }
+        // move the last until we stumble upon the end of the ll
         while (last.next != null) {
             last = last.next;
         }
