@@ -38,16 +38,25 @@ public class dll {
     // insert at custom position
     /*
      2 -> 3 -> 4 -> 8 -> null
-                6
+                6 (node)
      2 -> 3 -> 4 -> 6 -> 8 -> null
 
      */
     public void insertCustom(int insertAfterTheNumber, int val) {
          Node p = findValue(insertAfterTheNumber);
          Node node = new Node(val);
-         node.next = p.next;
-         node.prev = p;
-         p.next = node ;
+        if  (p.next != null) {
+            node.next = p.next;
+            node.prev = p;
+            p.next = node ;
+            node.next.prev = node ;
+
+        } else {
+            node.next = null ;
+            node.prev = p;
+            p.next = node ;
+        }
+
     }
 
 
@@ -65,7 +74,7 @@ public class dll {
         Node node = head;
          Node last = null ;
         while (node != null) {
-            System.out.print(node.val + "->");
+            System.out.print(node.val + " -> ");
             last = node ;
             node = node.next;
         }

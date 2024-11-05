@@ -9,7 +9,7 @@ public class doublyLL {
         list.insertFirst(8);
         list.insertFirst(6);
         list.insertLast(99);
-        list.insertCustom(5,7);
+        list.insertCustom(99,7);
 
         list.display();
     }
