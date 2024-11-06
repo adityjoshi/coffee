@@ -27,6 +27,20 @@ public class CLL {
         tail = node ;
 
     }
+    public void insertAtCustomPosition(int numAfterWhich,int val) {
+      Node node = new Node(val);
+      Node afterNode = findNode(numAfterWhich);
+
+    }
+    public Node findNode(int val) {
+        Node node = head ;
+        while (node != null) {
+            if (node.val == val) {
+                return node ;
+            }
+        }
+        return null;
+    }
     public void display() {
         Node node = head ;
         if (head != null) {
