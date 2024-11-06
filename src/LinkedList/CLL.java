@@ -46,6 +46,14 @@ public class CLL {
             tail.next = head ;
             return;
         }
+        do {
+            Node n = node.next;
+            if (n.val == val) {
+                node.next = n.next;
+                break;
+            }
+            node = node.next;
+        } while (node != head) ;
     }
     public Node findNode(int val) {
         Node node = head ;
