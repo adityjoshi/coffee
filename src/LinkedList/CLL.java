@@ -30,7 +30,8 @@ public class CLL {
     public void insertAtCustomPosition(int numAfterWhich,int val) {
       Node node = new Node(val);
       Node afterNode = findNode(numAfterWhich);
-
+      node.next = afterNode.next.next;
+      afterNode.next = node;
     }
     public Node findNode(int val) {
         Node node = head ;
