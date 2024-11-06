@@ -39,6 +39,7 @@ public class CLL {
             if (node.val == val) {
                 return node ;
             }
+            node = node.next;
         }
         return null;
     }
