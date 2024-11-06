@@ -12,6 +12,8 @@ public class CircularLL {
         System.out.println("Insert At Custom Position");
         list.insertAtCustomPosition(6,5);
         list.display();
+        list.deleteCustom(6);
+        list.display();
 
     }
 }

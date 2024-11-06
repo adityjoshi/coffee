@@ -38,11 +38,13 @@ public class CLL {
 // 2 -> 3 -> 6 -> 8 -> head
     public void deleteCustom(int val) {
         Node node = head ;
-        Node p = findNode(val);
-        if (node.next.val == p.val) {
-            node = p.next ;
+        Node previous = null;
+        do {
+            if(node.next.val == val) {
+            previous = node ;
+            previous.next = node.next.next;
         }
-        node = node.next ;
+        } while (node != head);
     }
     public Node findNode(int val) {
         Node node = head ;
