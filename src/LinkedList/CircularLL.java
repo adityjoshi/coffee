@@ -12,7 +12,8 @@ public class CircularLL {
         System.out.println("Insert At Custom Position");
         list.insertAtCustomPosition(6,5);
         list.display();
-        list.deleteCustom(6);
+        System.out.println("Remove the element from the first position of the LinkedList");
+        list.deleteCustom(2);
         list.display();
 
     }
