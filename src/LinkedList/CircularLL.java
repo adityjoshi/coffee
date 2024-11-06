@@ -9,7 +9,11 @@ public class CircularLL {
         list.insert(7);
         list.insert(1);
         list.display();
+        System.out.println("Insert At Custom Position");
         list.insertAtCustomPosition(1,5);
+        list.display();
+        System.out.println("delete");
+        list.DeleteCustom(6);
         list.display();
     }
 }
