@@ -33,6 +33,8 @@ public class CLL {
         node.next = afterNode.next;
         afterNode.next = node;
 
+
+
     }
 
 // 2 -> 3 -> 6 -> 8 -> head
