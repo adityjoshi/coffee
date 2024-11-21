@@ -17,6 +17,8 @@ public class Main {
         list.display();
         System.out.println(list.deleteIndex(2));
         list.display();
+        list.insertRecursion(12,3);
+        list.display();
 
 
     }
