@@ -38,6 +38,7 @@ public class CLL {
     }
 
 // 2 -> 3 -> 6 -> 8 -> head
+    
     public void deleteCustom(int val) {
         Node node = head ;
         if (node == null) {
