@@ -167,3 +167,8 @@ public class LL {
         tail.next= null;
     }
 }
+
+
+
+
+
