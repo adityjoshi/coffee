@@ -13,5 +13,9 @@ public class main {
         stack.push(2);
         stack.push(1);
         System.out.println(stack);
+        stack.pop();
+        stack.pop();
+        stack.pop();
+        System.out.println(stack);
     }
 }
