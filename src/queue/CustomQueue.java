@@ -31,4 +31,11 @@ public class CustomQueue {
         end++;
         return true ;
     }
+
+    public int remove() throws Exception {
+        if (isEmpty()) {
+            System.out.println("Queue is empty");
+            throw new Exception("Error =>");
+        }
+    }
 }
