@@ -28,6 +28,13 @@ public class main {
          */
 
         Deque<Integer> deque = new ArrayDeque<>();
-
+        deque.add(5);
+        System.out.println(deque);
+        deque.add(2);
+        System.out.println(deque);
+        deque.addFirst(6);
+        System.out.println(deque);
+        deque.removeLast();
+        System.out.println(deque);
     }
 }
