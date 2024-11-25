@@ -23,4 +23,14 @@ public class CircularQueue {
         // ptr at -1 ;
         return size == 0;
     }
+
+    public boolean insert(int item) {
+        if (isFull()) {
+            return false ;
+        }
+        data[end++] = item ;
+        end = end % size ;
+        size++;
+        return true ;
+    }
 }
