@@ -37,5 +37,11 @@ public class CustomQueue {
             System.out.println("Queue is empty");
             throw new Exception("Error =>");
         }
+       int removed = data[0];
+        for (int i = 1; i < end; i++) {
+            data[i-1] = i ;
+        }
+        end -- ;
+        return removed;
     }
 }
