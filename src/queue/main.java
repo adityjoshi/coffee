@@ -23,5 +23,13 @@ public class main {
         queue.remove();
         queue.remove();
         System.out.println(queue);
+
+        /*
+
+        a dequeue is a queue that can insert and remove from both the ends
+
+         */
+
+
     }
 }
