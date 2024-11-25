@@ -1,9 +1,6 @@
 package queue;
 
-import java.util.Collection;
-import java.util.Iterator;
-import java.util.LinkedList;
-import java.util.Queue;
+import java.util.*;
 
 public class main {
     public static void main(String[] args) {
@@ -30,6 +27,7 @@ public class main {
 
          */
 
+        Deque<Integer> deque = new ArrayDeque<>();
 
     }
 }
