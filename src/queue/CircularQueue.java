@@ -29,8 +29,34 @@ public class CircularQueue {
             return false ;
         }
         data[end++] = item ;
-        end = end % size ;
+        end = end % data.length ;
         size++;
         return true ;
     }
+
+    public int remove() throws Exception {
+        if (isEmpty()) {
+            System.out.println("Queue is empty");
+            throw new Exception("Error =>");
+        }
+        int removed = data[front];
+        front = front % data.length;
+        size--;
+        return removed;
+    }
+
+    public void display() {
+        if (isEmpty()) {
+            System.out.println("Empty");
+            return;
+        }
+        int i = front;
+        do {
+            System.out.print(data[i] + " -> ");
+            i++;
+            i %= data.length;
+        } while (i != end);
+        System.out.println("END");
+    }
+
 }
