@@ -15,10 +15,10 @@ public class Main {
         panel.setLayout(new GridLayout(6, 2, 10, 10));
 
 
-        JLabel nameLabel = new JLabel("Name:");
-        JLabel mobileLabel = new JLabel("Contact Number:");
-        JLabel genderLabel = new JLabel("Gender:");
-        JLabel emailLabel = new JLabel("Email:");
+//        JLabel nameLabel = new JLabel("Name:");
+//        JLabel mobileLabel = new JLabel("Contact Number:");
+//        JLabel genderLabel = new JLabel("Gender:");
+//        JLabel emailLabel = new JLabel("Email:");
 
 
         JTextField nameField = new JTextField(10);
