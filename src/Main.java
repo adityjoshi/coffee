@@ -1,124 +1,123 @@
 import javax.swing.*;
-import javax.swing.table.DefaultTableModel;
-import javax.swing.tree.DefaultMutableTreeNode;
 import java.awt.*;
-import java.util.Random;
 
 public class Main {
+    private JTextField firstNameField, lastNameField, emailField, phoneField, nationalityField, ageField, addressField;
+    private JButton submitButton, clearButton;
+    private JLabel messageLabel;
+
     public static void main(String[] args) {
-        JFrame frame = new JFrame("Advanced Swing Components Demo");
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.setSize(800, 600);
-        frame.setLayout(new BorderLayout());
-
-        // Split Pane
-        JTextArea leftTextArea = new JTextArea("Left Pane");
-        JTextArea rightTextArea = new JTextArea("Right Pane");
-        JSplitPane splitPane = new JSplitPane(JSplitPane.HORIZONTAL_SPLIT, new JScrollPane(leftTextArea), new JScrollPane(rightTextArea));
-        splitPane.setDividerLocation(300);
-
-        // Tabbed Pane
-        JTabbedPane tabbedPane = new JTabbedPane();
-        tabbedPane.addTab("Split Pane", splitPane);
-
-        // Desktop Pane with Internal Frames
-        JDesktopPane desktopPane = new JDesktopPane();
-
-        JInternalFrame internalFrame1 = createInternalFrame("Frame 1", 20, 20);
-        JInternalFrame internalFrame2 = createInternalFrame("Frame 2", 100, 100);
-        desktopPane.add(internalFrame1);
-        desktopPane.add(internalFrame2);
-
-        tabbedPane.addTab("Desktop Pane", desktopPane);
-
-        // Cascading and Tiling
-        JButton cascadeButton = new JButton("Cascade Frames");
-        cascadeButton.addActionListener(e -> cascadeFrames(desktopPane));
-
-        JButton tileButton = new JButton("Tile Frames");
-        tileButton.addActionListener(e -> tileFrames(desktopPane));
-
-        JPanel desktopControlPanel = new JPanel();
-        desktopControlPanel.add(cascadeButton);
-        desktopControlPanel.add(tileButton);
-        tabbedPane.addTab("Desktop Controls", desktopControlPanel);
-
-        // Advanced Components: List, Tree, Table, Progress Bar
-        JPanel advancedPanel = new JPanel(new GridLayout(2, 2));
-
-        // List
-        JList<String> list = new JList<>(new String[]{"Item 1", "Item 2", "Item 3", "Item 4"});
-        advancedPanel.add(new JScrollPane(list));
-
-        // Tree
-        DefaultMutableTreeNode root = new DefaultMutableTreeNode("Root");
-        DefaultMutableTreeNode child1 = new DefaultMutableTreeNode("Child 1");
-        DefaultMutableTreeNode child2 = new DefaultMutableTreeNode("Child 2");
-        root.add(child1);
-        root.add(child2);
-        JTree tree = new JTree(root);
-        advancedPanel.add(new JScrollPane(tree));
-
-        // Table
-        DefaultTableModel tableModel = new DefaultTableModel(
-                new Object[][]{{"1", "John", "25"}, {"2", "Jane", "30"}},
-                new Object[]{"ID", "Name", "Age"}
-        );
-        JTable table = new JTable(tableModel);
-        advancedPanel.add(new JScrollPane(table));
-
-        // Progress Bar
-        JProgressBar progressBar = new JProgressBar(0, 100);
-        progressBar.setValue(50);
-        progressBar.setStringPainted(true);
-        advancedPanel.add(progressBar);
-
-        tabbedPane.addTab("Advanced Components", advancedPanel);
-
-        // Add tabbed pane to frame
-        frame.add(tabbedPane, BorderLayout.CENTER);
-        frame.setVisible(true);
+        SwingUtilities.invokeLater(() -> {
+            JFrame frame = new JFrame("Registration Form");
+            Main app = new Main();
+            frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+            frame.setContentPane(app.createUI());
+            frame.setSize(400, 500);
+            frame.setVisible(true);
+        });
     }
 
-    // Helper method to create internal frames
-    private static JInternalFrame createInternalFrame(String title, int x, int y) {
-        JInternalFrame internalFrame = new JInternalFrame(title, true, true, true, true);
-        internalFrame.setBounds(x, y, 200, 150);
-        internalFrame.setVisible(true);
-        return internalFrame;
+    private JPanel createUI() {
+        JPanel panel = new JPanel();
+        panel.setLayout(new GridLayout(9, 2, 10, 10));
+        panel.setBorder(BorderFactory.createEmptyBorder(20, 20, 20, 20));
+
+        // First Name
+        panel.add(new JLabel("First Name:"));
+        firstNameField = new JTextField(20);
+        panel.add(firstNameField);
+
+        // Last Name
+        panel.add(new JLabel("Last Name:"));
+        lastNameField = new JTextField(20);
+        panel.add(lastNameField);
+
+        // Email
+        panel.add(new JLabel("Email:"));
+        emailField = new JTextField(20);
+        panel.add(emailField);
+
+        // Phone
+        panel.add(new JLabel("Phone:"));
+        phoneField = new JTextField(15);
+        panel.add(phoneField);
+
+        // Nationality
+        panel.add(new JLabel("Nationality:"));
+        nationalityField = new JTextField(20);
+        panel.add(nationalityField);
+
+        // Age
+        panel.add(new JLabel("Age:"));
+        ageField = new JTextField(5);
+        panel.add(ageField);
+
+        // Address
+        panel.add(new JLabel("Address:"));
+        addressField = new JTextField(100);
+        panel.add(addressField);
+
+        // Buttons
+        submitButton = new JButton("Submit");
+        clearButton = new JButton("Clear");
+        panel.add(submitButton);
+        panel.add(clearButton);
+
+        // Message Label
+        messageLabel = new JLabel("", JLabel.CENTER);
+        panel.add(new JLabel());
+        panel.add(messageLabel);
+
+        // Add action listeners
+        submitButton.addActionListener(e -> handleSubmit());
+        clearButton.addActionListener(e -> clearFields());
+
+        return panel;
     }
 
-    // Helper method to cascade internal frames
-    private static void cascadeFrames(JDesktopPane desktopPane) {
-        int x = 20, y = 20;
-        for (JInternalFrame frame : desktopPane.getAllFrames()) {
-            frame.setLocation(x, y);
-            x += 30;
-            y += 30;
+    private void handleSubmit() {
+        String firstName = firstNameField.getText().trim();
+        String lastName = lastNameField.getText().trim();
+        String email = emailField.getText().trim();
+        String phone = phoneField.getText().trim();
+        String nationality = nationalityField.getText().trim();
+        String age = ageField.getText().trim();
+        String address = addressField.getText().trim();
+
+        // Validate inputs
+        if (firstName.isEmpty() || lastName.isEmpty() || email.isEmpty() || phone.isEmpty() ||
+                nationality.isEmpty() || age.isEmpty() || address.isEmpty()) {
+            messageLabel.setText("All fields are required!");
+            messageLabel.setForeground(Color.RED);
+            return;
         }
+
+        // Display the input data in a dialog
+        StringBuilder userData = new StringBuilder();
+        userData.append("First Name: ").append(firstName).append("\n")
+                .append("Last Name: ").append(lastName).append("\n")
+                .append("Email: ").append(email).append("\n")
+                .append("Phone: ").append(phone).append("\n")
+                .append("Nationality: ").append(nationality).append("\n")
+                .append("Age: ").append(age).append("\n")
+                .append("Address: ").append(address);
+
+        JOptionPane.showMessageDialog(null, userData.toString(), "Submitted Data", JOptionPane.INFORMATION_MESSAGE);
+
+        // Reset the form after submission
+        messageLabel.setText("Data submitted successfully!");
+        messageLabel.setForeground(Color.GREEN);
+        clearFields();
     }
 
-    // Helper method to tile internal frames
-    private static void tileFrames(JDesktopPane desktopPane) {
-        JInternalFrame[] frames = desktopPane.getAllFrames();
-        int count = frames.length;
-        if (count == 0) return;
-
-        int rows = (int) Math.sqrt(count);
-        int cols = (int) Math.ceil((double) count / rows);
-
-        Dimension size = desktopPane.getSize();
-        int w = size.width / cols;
-        int h = size.height / rows;
-
-        int x = 0, y = 0;
-        for (int i = 0; i < count; i++) {
-            frames[i].setBounds(x, y, w, h);
-            x += w;
-            if (x + w > size.width) {
-                x = 0;
-                y += h;
-            }
-        }
+    private void clearFields() {
+        firstNameField.setText("");
+        lastNameField.setText("");
+        emailField.setText("");
+        phoneField.setText("");
+        nationalityField.setText("");
+        ageField.setText("");
+        addressField.setText("");
+        messageLabel.setText("");
     }
 }
