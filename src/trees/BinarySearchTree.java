@@ -29,6 +29,19 @@ public class BinarySearchTree {
         return root==null;
     }
 
+    private Node insert (int val, Node node) {
+        if (node == null) {
+            return new Node(val);
+        }
+        if (val < node.value) {
+            node.left = insert(val,node.left);
+        }
+        if (val > node.value) {
+            node.right = insert(val,node.right);
+        }
+        return node ;
+    }
+
     public void display() {
         display(root, "Root Node:");
     }
