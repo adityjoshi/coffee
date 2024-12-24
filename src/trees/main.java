@@ -15,8 +15,8 @@ public class main {
             Binary search tree
              */
         BinarySearchTree x = new BinarySearchTree();
-        int [] nums = {5,6,2,1,8,9,12,11};
-        x.populate(nums);
+        int [] num = {1,2,3,4,5,6};
+        x.populatedSorted(num);
         x.display();
     }
 }

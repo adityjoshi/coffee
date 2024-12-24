@@ -62,6 +62,23 @@ public class BinarySearchTree {
             this.insert(nums[i]);
         }
     }
+
+    /*
+    when we want to insert a sorted array but in a balanced way
+     */
+    public void populatedSorted(int [] nums) {
+        populatedSorted(nums,0,nums.length);
+    }
+    private void populatedSorted(int [] nums, int start, int end) {
+        if (start>=end) {
+            return;
+        }
+        int mid = start + (end - start)/2;
+        this.insert(nums[mid]);
+        populatedSorted(nums,start,mid);
+        populatedSorted(nums,mid+1,end);
+    }
+
     public void display() {
         display(root, "Root Node:");
     }
