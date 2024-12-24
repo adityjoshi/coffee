@@ -56,6 +56,12 @@ public class BinarySearchTree {
         }
         return Math.abs(height(node.left)-height(node.right)) <= 1 && Balanced(node.left) && Balanced(node.right);
     }
+
+    public void populate(int [] nums) {
+        for (int i = 0; i<nums.length; i++) {
+            this.insert(nums[i]);
+        }
+    }
     public void display() {
         display(root, "Root Node:");
     }
