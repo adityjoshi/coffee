@@ -29,6 +29,9 @@ public class BinarySearchTree {
         return root==null;
     }
 
+    public void insert(int value) {
+        root = insert(value ,root );
+    }
     private Node insert (int val, Node node) {
         if (node == null) {
             return new Node(val);
@@ -39,9 +42,20 @@ public class BinarySearchTree {
         if (val > node.value) {
             node.right = insert(val,node.right);
         }
+        node.height = Math.max(height(node.left),height(node.right)) + 1 ;
         return node ;
     }
 
+
+    public boolean Balanced() {
+        return Balanced(root);
+    }
+    private boolean Balanced(Node node) {
+        if (root == null) {
+            return true ;
+        }
+        return Math.abs(height(node.left)-height(node.right)) <= 1 && Balanced(node.left) && Balanced(node.right);
+    }
     public void display() {
         display(root, "Root Node:");
     }
