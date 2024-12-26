@@ -7,16 +7,17 @@ public class main {
        /*
        Binary tree
         */
-//            Scanner scanner = new Scanner(System.in);
-//            BinaryTree tree = new BinaryTree();
-//            tree.populate(scanner);
-//            tree.prettyDisplay();
+            Scanner scanner = new Scanner(System.in);
+            BinaryTree tree = new BinaryTree();
+            tree.populate(scanner);
+            tree.prettyDisplay();
+            tree.preOrder();
             /*
             Binary search tree
              */
-        BinarySearchTree x = new BinarySearchTree();
-        int [] num = {1,2,3,4,5,6};
-        x.populatedSorted(num);
-        x.display();
+//        BinarySearchTree x = new BinarySearchTree();
+//        int [] num = {1,2,3,4,5,6};
+//        x.populatedSorted(num);
+//        x.display();
     }
 }
